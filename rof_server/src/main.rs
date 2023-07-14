@@ -21,5 +21,8 @@ fn main() {
     let addr = config.host + ":" + &config.port;
     println!("Starting Server on {}", addr);
     let listener = TcpListener::bind(addr).unwrap();
+
+    for stream in listener.incoming() {
+    }
 }
 
