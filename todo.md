@@ -1,9 +1,11 @@
 //TODO: Resolve dependencies automatically on start 
 //TODO: Threads?
 
-consider a min and max thread number, and dynamically resize between them, 
-this way we dont use more resources than we need, 
-cant use more than we have, and always have some ready to go
+    consider a min and max thread number, and dynamically resize between them, 
+    this way we dont use more resources than we need, 
+    cant use more than we have, and always have some ready to go
+
+//TODO: Shutdown?
 
 Details Rails server command 
 
