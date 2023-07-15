@@ -1,5 +1,6 @@
 [workspace]
 
 members = [
-  "rof_server"
+  "rof_server",
+  "rof_cli"
 ]

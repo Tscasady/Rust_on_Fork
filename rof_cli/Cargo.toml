@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.3.12", features = ["derive"] }
-
+rof_server = { path = "../rof_server"}

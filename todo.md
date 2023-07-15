@@ -1,4 +1,6 @@
-//TODO: Resolve dependencies automatically on start 
+# Server
+
+//TODO: Resolve dependencies automatically on start
 //TODO: Threads?
 
     consider a min and max thread number, and dynamically resize between them, 
@@ -6,6 +8,9 @@
     cant use more than we have, and always have some ready to go
 
 //TODO: Shutdown?
+//TODO: config.json/yml or .env file created with defaults, can be changed via CLI or the file
+    consider envy package
+    generate a config file that attemps to read env vars, and provides defaults otherwise, see Rails config/puma.rb
 
 Details Rails server command 
 
@@ -44,4 +49,27 @@ Details Rails server command
 //       [--log-to-stdout], [--no-log-to-stdout]  # Whether to log to stdout. Enabled by default in development when not daemonized.
 
 
+# CLI
+
+## new
+check if currrent pwd is a cargo dir
+cargo init / new
+create new project with given name
+
+## server command
+
+start server with defaults
+read from config file/env/args
+
+## console command
+
+bin/rails console
+bin/rails server
+bin/rails test
+bin/rails generate
+bin/rails db:migrate
+bin/rails db:create
+bin/rails routes
+bin/rails dbconsole
+rails new app_name
 
