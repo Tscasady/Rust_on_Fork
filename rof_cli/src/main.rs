@@ -23,6 +23,8 @@ struct Cli {
 enum Commands {
     /// Creates a new project 
     New(Name),
+    #[clap(about = "Starts the Server")]
+    Server,
 }
 
 #[derive(Args)]
@@ -32,4 +34,13 @@ pub struct Name {
 
 fn main() {
     let cli = Cli::parse();
+    match cli.command {
+        Commands::Server => {
+            println!("here");
+            let mut cmd = std::process::Command::new("./target/debug/rof_server").spawn().expect("SErver?");
+        }
+        Commands::New(name) => {
+            println!("{}", name.name)
+        }
+    } 
 }
