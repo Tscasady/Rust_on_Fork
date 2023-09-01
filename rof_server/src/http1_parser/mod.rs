@@ -5,7 +5,8 @@ use std::collections::HashMap;
 use strum_macros::EnumString;
 use body_parser::*;
 
-
+#[derive(Debug)]
+pub struct RequestError {}
 pub struct Request {
     request_line: RequestLine,
     //header != headers 
@@ -99,9 +100,20 @@ mod test {
     use super::HttpMethod;
     use std::str::FromStr;
      
+    #[test]
     fn httpmethod_new() {
         let verb = "GET";
-        assert_eq!(HttpMethod::GET, HttpMethod::from_str(verb).unwrap())
+        assert_eq!(HttpMethod::GET, HttpMethod::from_str(verb).unwrap());
+
+        let verb = "POST";
+        assert_eq!(HttpMethod::POST, HttpMethod::from_str(verb).unwrap());
+
     }
 
+    #[test]
+    #[should_panic]
+    fn bad_verb() {
+        let verb = "BADSTRING";
+        HttpMethod::from_str(verb).unwrap();
+    }
 }
