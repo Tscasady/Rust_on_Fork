@@ -36,11 +36,14 @@ fn main() {
     let cli = Cli::parse();
     match cli.command {
         Commands::Server => {
-            println!("here");
-            let mut cmd = std::process::Command::new("./target/debug/rof_server").spawn().expect("SErver?");
+            let mut cmd = std::process::Command::new("./target/debug/rof_server").spawn().expect("server didn't server?");
+            cmd.wait().unwrap();
+            //wait on child
         }
         Commands::New(name) => {
             println!("{}", name.name)
         }
     } 
+    //exit
+
 }
